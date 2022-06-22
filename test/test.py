@@ -15,8 +15,8 @@ class Image():
         table['amplitude'] = np.random.rand(n_sources)*100
         table['x_mean'] = np.random.rand(n_sources)*self.shape[0]
         table['y_mean'] = np.random.rand(n_sources)*self.shape[1]
-        table['x_stddev'] = np.random.rand(n_sources)
-        table['y_stddev'] = np.random.rand(n_sources)
+        table['x_stddev'] = np.random.rand(n_sources)*5
+        table['y_stddev'] = np.random.rand(n_sources)*5
         table['theta'] = np.radians(np.random.rand(n_sources)*360)
         source= make_gaussian_sources_image(self.shape, table)
         image = source +  make_noise_image(self.shape, distribution='gaussian', mean=5., stddev=5.)
@@ -28,6 +28,6 @@ class Image():
 
 #%%
 shape=(100,100)
-array=Image(shape).load_image(n_sources=5)
+array=Image(shape).load_image(n_sources=10)
 plt.imshow(array, origin='lower')
 #%%
