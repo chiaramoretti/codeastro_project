@@ -13,8 +13,8 @@ class Image():
     def load_image(self, n_sources):
         table = QTable()
         table['amplitude'] = np.random.rand(n_sources)*100
-        table['x_mean'] = np.random.rand(n_sources)*self.shape
-        table['y_mean'] = np.random.rand(n_sources)*self.shape
+        table['x_mean'] = np.random.rand(n_sources)*self.shape[0]
+        table['y_mean'] = np.random.rand(n_sources)*self.shape[1]
         table['x_stddev'] = np.random.rand(n_sources)
         table['y_stddev'] = np.random.rand(n_sources)
         table['theta'] = np.radians(np.random.rand(n_sources)*360)
